@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Structured Data Generator",
+  "short_name": "Data Gen",
   "version": "1.0.0",
   "start_url": "/",
   "lang": "en",
@@ -23,7 +23,7 @@
     "sizes": "wxh",
     "type": "image/*"
   }],
-  "theme_color": "#528ff9",
+  "theme_color": "#900",
   "background_color": "#fefefe",
   "display": "standalone",
   "developer": {
