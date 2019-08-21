@@ -36,7 +36,6 @@ class SchemaThingElement extends HTMLElement {
 
 	async getTemplate(type = 'thing') {
 			const resp = await fetch(new URL(`${type}.html`, import.meta.url));
-			console.log(`Fetching ${resp.url}`);
 			const parser = new DOMParser();
 			const html = await resp.text();
 			const doc = parser.parseFromString(html, 'text/html');

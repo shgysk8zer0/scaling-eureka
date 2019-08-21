@@ -4,6 +4,7 @@ import 'https://cdn.kernvalley.us/components/share-button.js';
 import 'https://cdn.kernvalley.us/components/current-year.js';
 import {$, ready, registerServiceWorker} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import '../components/schema-form.js';
+import '../components/schema/trip.js';
 
 if (document.documentElement.dataset.hasOwnProperty('serviceWorker')) {
 	registerServiceWorker(document.documentElement.dataset.serviceWorker).catch(console.error);
