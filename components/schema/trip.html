@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<style>
+			.block {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset>
+			<input type="hidden" name="@context" value="https://schema.org" />
+			<input type="hidden" name="@type" value="Trip" />
+			<label class="block">
+				<span>Name:</span>
+				<input type="text" name="name" placeholder="Trip Name" required="" />
+			</label>
+			<label class="block">
+				<textarea name="description" placeholder="Description" required=""></textarea>
+			</label>
+			<figure>
+				<img src="/img/octicons/file-media.svg" alt="Invalid Image" width="250" height="250" data-preview="image" decoding="async" crossorigin="annonymous" />
+			</figure>
+			<label class="block">
+				<span>Image URL:</span>
+				<input type="url" name="image" placeholder="https://example.com/image.jpg" required="" />
+			</label>
+			<div>
+				<div class="offers-container">
+					<schema-offer></schema-offer>
+				</div>
+				<button type="button" data-add="offer">Add Offer</button>
+			</div>
+			<div>
+				<div class="times-container">
+					<div data-container="times">
+						<label>
+							<span>Arrive:</span>
+							<input type="time" name="arrivalTime[]" required="" />
+						</label>
+						<label>
+							<span>Depart:</span>
+							<input type="time" name="departureTime[]" required="" />
+						</label>
+					</div>
+				</div>
+				<button type="button" data-add="time">Add Time</button>
+			</div>
+		</fieldset>
+		<button type="submit" class="btn btn-acept">Submit</button>
+		<template data-template-form="times">
+			<div data-container="times">
+				<label>
+					<span>Arrive:</span>
+					<input type="time" name="arrivalTime[]" required="" />
+				</label>
+				<label>
+					<span>Depart:</span>
+					<input type="time" name="departureTime[]" required="" />
+				</label>
+				<button class="remove-container btn btn-reject" hidden="">X</button>
+			</div>
+		</template>
+	</body>
+</html>
