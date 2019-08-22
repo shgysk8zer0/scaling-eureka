@@ -1,4 +1,5 @@
 import {importTemplate} from '../../js/functions.js';
+import {SoCal} from '../../js/orgs.js';
 import './offer.js';
 customElements.define('schema-trip', class SchemaTripElement extends HTMLFormElement {
 	constructor() {
@@ -35,7 +36,7 @@ customElements.define('schema-trip', class SchemaTripElement extends HTMLFormEle
 			this.addEventListener('submit', async event => {
 				event.preventDefault();
 				console.log(JSON.parse(JSON.stringify(this)));
-				navigator.clipboard.writeText(JSON.stringify(this));
+				navigator.clipboard.writeText(JSON.stringify(this, null, 4));
 			})
 		}).catch(console.error);
 	}
@@ -72,46 +73,7 @@ customElements.define('schema-trip', class SchemaTripElement extends HTMLFormEle
 				width: image.width,
 			},
 			description: this.get('description'),
-			provider: {
-				'@type': 'Organization',
-				location: {
-					'@type': 'Place',
-					name: 'Acme Rafting Co.',
-					address: {
-						'@type': 'PostalAddress',
-						streetAddress: '123 Some St.',
-						addressLocality: 'Nowhere',
-						addressRegion: 'CA',
-						addressCountry: 'US',
-					},
-					openingHoursSpecification: [{
-						'@type': 'OpeningHoursSpecification',
-						dayOfWeek: 'Monday',
-						opens: '09:00-07:00',
-						closes: '17:00-07:00',
-					}, {
-						'@type': 'OpeningHoursSpecification',
-						dayOfWeek: 'Tuesday',
-						opens: '09:00-07:00',
-						closes: '17:00-07:00',
-					}, {
-						'@type': 'OpeningHoursSpecification',
-						dayOfWeek: 'Wednesday',
-						opens: '09:00-07:00',
-						closes: '17:00-07:00',
-					}, {
-						'@type': 'OpeningHoursSpecification',
-						dayOfWeek: 'Thursday',
-						opens: '09:00-07:00',
-						closes: '17:00-07:00',
-					}, {
-						'@type': 'OpeningHoursSpecification',
-						dayOfWeek: 'Friday',
-						opens: '09:00-07:00',
-						closes: '17:00-07:00',
-					}],
-				},
-			},
+			provider: SoCal,
 		};
 	}
 
@@ -125,6 +87,10 @@ customElements.define('schema-trip', class SchemaTripElement extends HTMLFormEle
 
 	get imagePreview() {
 		return this.querySelector('img[data-preview="image"]');
+	}
+
+	get provider() {
+		return SoCal;
 	}
 
 	/*get name() {
