@@ -7,6 +7,7 @@ const config = {
 		'/components/schema/trip.html',
 		'/components/schema/offer.html',
 		'/js/index.js',
+		'/js/functions.js',
 		// 'https://cdn.kernvalley.us/components/share-button.js',
 		// 'https://cdn.kernvalley.us/js/std-js/share-config.js',
 		'/components/schema/trip.js',
@@ -65,6 +66,15 @@ const config = {
 		'https://cdn.kernvalley.us/fonts/roboto.woff2',
 	].map(path => new URL(path, location.origin).href),
 };
+
+self.addEventListener('install', async () => {
+	for (const key of await caches.keys()) {
+		caches.delete(key).catch(console.log);
+	}
+
+	const cache = await caches.open(config.version);
+	await cache.addAll(config.stale).catch(console.error);
+});
 
 self.addEventListener('fetch', event => {
 	switch(event.request.method) {
