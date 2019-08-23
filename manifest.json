@@ -19,9 +19,9 @@
     "type": "image/png"
   }],
   "screenshots": [{
-    "src": "url",
-    "sizes": "wxh",
-    "type": "image/*"
+    "src": "https://i.imgur.com/bCrdM0ql.jpg",
+    "sizes": "640x483",
+    "type": "image/jpg"
   }],
   "theme_color": "#900",
   "background_color": "#fefefe",
