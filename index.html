@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
+<html lang="en" dir="ltr" class="no-js border-box smooth-scroll background-primary" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
 	<head>
 		<base href="/" />
 		<meta charset="utf-8" />
@@ -46,13 +46,13 @@
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 	</head>
-	<body id="top" class="grid font-main background-primary color-default">
-		<header id="header"></header>
-		<nav id="nav" class="sticky top shadow background-accent color-alt z-3"></nav>
+	<body id="top" class="grid font-main color-default">
+		<header id="header" hidden=""></header>
+		<nav id="nav" class="sticky top shadow background-accent color-alt z-3" hidden=""></nav>
 		<main>
-			<form is="schema-trip"></form>
+			<form is="schema-trip" class="card shadow"></form>
 		</main>
-		<aside id="sidebar"></aside>
+		<aside id="sidebar" hidden=""></aside>
 		<footer id="footer" class="background-contrast color-alt">
 			<div class="social-links cols-2">
 				<div class="cols inline-block">
@@ -108,10 +108,10 @@
 				</span>
 			</div>
 		</footer>
-		<button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share">
-			<svg class="current-color icon">
-				<use xlink:href="/img/icons.svg#public-share"></use>
-			</svg>
-		</button>
+		<!-- <button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share" hidden=""> -->
+		<!-- 	<svg class="current-color icon"> -->
+		<!-- 		<use xlink:href="/img/icons.svg#public-share"></use> -->
+		<!-- 	</svg> -->
+		<!-- </button> -->
 	</body>
 </html>

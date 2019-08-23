@@ -10,6 +10,10 @@
 @import url("https://cdn.kernvalley.us/css/core-css/animations.css");
 @import url("./layout.css");
 
+body {
+	background-color: #e3e3e3;
+}
+
 input[hidden] + label[for].btn-toggle {
 	background-color: var(--button-disabled-background);
 	margin: 0.3rem;

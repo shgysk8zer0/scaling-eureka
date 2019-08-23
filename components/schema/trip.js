@@ -108,7 +108,9 @@ customElements.define('schema-trip', class SchemaTripElement extends HTMLFormEle
 	async addOffer() {
 		await customElements.whenDefined('schema-offer');
 		const Offer = customElements.get('schema-offer');
-		this.querySelector('.offers-container').append(new Offer());
+		const offer = new Offer();
+		offer.classList.add('block');
+		this.querySelector('.offers-container').append(offer);
 	}
 }, {
 	extends: 'form',
